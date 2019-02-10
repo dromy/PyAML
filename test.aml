@@ -1,0 +1,2450 @@
+
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513wm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513wm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513tm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513tm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513wm -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513wm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass f5513wm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0466311863 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0466311863 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect f5513wm TMP0466311863 polygon 
+      res perennial = 2
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0466311863 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0466311863 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP0466311863 TMP8252854963 # # 0.1 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8252854963 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8252854963 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP0466311863 TMP8275662073 # # 50 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8275662073 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8275662073 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8275662073 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8275662073:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP8275662073
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2971401173 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2971401173 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513tm -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513tm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass f5513tm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      clip f5513tm TMP8275662073 TMP2971401173 line 0.0000000000001
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2971401173 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2971401173 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8275662073 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8275662073:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP8275662073
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP6969073473 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP6969073473 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2971401173 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2971401173:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP2971401173
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP2971401173 TMP8275662073 TMP6969073473 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6969073473 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6969073473 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6969073473 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6969073473:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP6969073473
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0067379673 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0067379673 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP6969073473 TMP0067379673 line 
+      res inside = 100
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0067379673 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0067379673 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has a required item
+      /*
+      &if not [iteminfo TMP0067379673 -line inside -exists] &then
+         &do
+         &ty
+         &ty 
+         &ty ITEM ERROR 
+         &ty Item inside does not exist for TMP0067379673 lines 
+         &ty 
+         &return &error 
+         &end
+      /*============================================================
+      
+      /*
+      /* Drop item
+      /*
+      dropitem TMP0067379673.aat TMP0067379673.aat inside
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8252854963 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8252854963:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP8252854963
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2534612083 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2534612083 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP0067379673 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP0067379673:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP0067379673
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP0067379673 TMP8252854963 TMP2534612083 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2534612083 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2534612083 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2534612083 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2534612083:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP2534612083
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0230488383 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0230488383 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP2534612083 TMP0230488383 line 
+      res inside =  1
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0230488383 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0230488383 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP0230488383 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP0230488383:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP0230488383
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP8250360783 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP8250360783 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP0230488383 TMP8250360783 line 
+      res length  > 100
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8250360783 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8250360783 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8252854963 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8252854963 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP8252854963 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8275662073 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8275662073 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP8275662073 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2971401173 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2971401173 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP2971401173 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6969073473 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6969073473 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6969073473 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0067379673 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0067379673 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP0067379673 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2534612083 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2534612083 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP2534612083 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513tm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513tm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513tm -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513tm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass f5513tm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2939755838 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2939755838 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect f5513tm TMP2939755838 polygon 
+      res perennial = 2
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2939755838 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2939755838 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513wm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513wm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP2939755838 TMP4437778448 # # 0.1 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP4437778448 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP4437778448 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP2939755838 TMP2576240648 # # 50 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2576240648 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2576240648 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2576240648 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2576240648:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP2576240648
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP4876061748 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP4876061748 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513wm -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513wm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass f5513wm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      clip f5513wm TMP2576240648 TMP4876061748 line 0.0000000000001
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP4876061748 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP4876061748 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2576240648 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2576240648:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP2576240648
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP6925128058 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP6925128058 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP4876061748 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP4876061748:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP4876061748
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP4876061748 TMP2576240648 TMP6925128058 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6925128058 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6925128058 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6925128058 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6925128058:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP6925128058
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2519820458 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2519820458 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP6925128058 TMP2519820458 line 
+      res inside = 100
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2519820458 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2519820458 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has a required item
+      /*
+      &if not [iteminfo TMP2519820458 -line inside -exists] &then
+         &do
+         &ty
+         &ty 
+         &ty ITEM ERROR 
+         &ty Item inside does not exist for TMP2519820458 lines 
+         &ty 
+         &return &error 
+         &end
+      /*============================================================
+      
+      /*
+      /* Drop item
+      /*
+      dropitem TMP2519820458.aat TMP2519820458.aat inside
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP4437778448 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP4437778448:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP4437778448
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0238082958 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0238082958 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2519820458 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2519820458:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP2519820458
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP2519820458 TMP4437778448 TMP0238082958 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0238082958 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0238082958 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP0238082958 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP0238082958:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP0238082958
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0487013268 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0487013268 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP0238082958 TMP0487013268 line 
+      res inside =  1
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0487013268 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0487013268 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP0487013268 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP0487013268:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP0487013268
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP8085337668 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP8085337668 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP0487013268 TMP8085337668 line 
+      res length  > 250
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8085337668 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8085337668 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP4437778448 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP4437778448 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP4437778448 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2576240648 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2576240648 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP2576240648 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP4876061748 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP4876061748 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP4876061748 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6925128058 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6925128058 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6925128058 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2519820458 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2519820458 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP2519820458 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0238082958 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0238082958 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP0238082958 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513tm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513tm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513tm -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513tm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass f5513tm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP6583510324 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP6583510324 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect f5513tm TMP6583510324 polygon 
+      res perennial = 2
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6583510324 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6583510324 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513wm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513wm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP6583510324 TMP6779164424 # # 0.1 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6779164424 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6779164424 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP6583510324 TMP4876040524 # # 50 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP4876040524 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP4876040524 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP4876040524 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP4876040524:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP4876040524
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP6319755524 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP6319755524 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513wm -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513wm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass f5513wm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      clip f5513wm TMP4876040524 TMP6319755524 line 0.0000000000001
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6319755524 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6319755524 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP4876040524 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP4876040524:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP4876040524
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP6338957724 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP6338957724 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6319755524 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6319755524:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP6319755524
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP6319755524 TMP4876040524 TMP6338957724 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6338957724 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6338957724 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6338957724 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6338957724:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP6338957724
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0428905924 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0428905924 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP6338957724 TMP0428905924 line 
+      res inside = 100
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0428905924 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0428905924 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has a required item
+      /*
+      &if not [iteminfo TMP0428905924 -line inside -exists] &then
+         &do
+         &ty
+         &ty 
+         &ty ITEM ERROR 
+         &ty Item inside does not exist for TMP0428905924 lines 
+         &ty 
+         &return &error 
+         &end
+      /*============================================================
+      
+      /*
+      /* Drop item
+      /*
+      dropitem TMP0428905924.aat TMP0428905924.aat inside
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6779164424 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6779164424:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP6779164424
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP8659204134 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP8659204134 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP0428905924 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP0428905924:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP0428905924
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP0428905924 TMP6779164424 TMP8659204134 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8659204134 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8659204134 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8659204134 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8659204134:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP8659204134
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2386799234 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2386799234 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP8659204134 TMP2386799234 line 
+      res inside =  1
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2386799234 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2386799234 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2386799234 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2386799234:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP2386799234
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2760471434 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2760471434 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP2386799234 TMP2760471434 line 
+      res length  > 250
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2760471434 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2760471434 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6779164424 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6779164424 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6779164424 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP4876040524 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP4876040524 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP4876040524 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6319755524 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6319755524 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6319755524 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6338957724 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6338957724 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6338957724 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0428905924 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0428905924 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP0428905924 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8659204134 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8659204134 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP8659204134 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513tm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513tm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513tm -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513tm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass f5513tm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0407067696 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0407067696 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect f5513tm TMP0407067696 polygon 
+      res perennial = 2
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0407067696 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0407067696 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists f5513wm -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover f5513wm does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP0407067696 TMP6129861896 # # 0.1 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6129861896 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6129861896 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &do
+      buffer TMP0407067696 TMP8085540996 # # 50 0.000000000001 line
+      &end
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8085540996 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8085540996 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8085540996 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8085540996:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP8085540996
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2703067996 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2703067996 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists f5513wm -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in f5513wm:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass f5513wm
+         &return &error 
+         &end
+      /*===========================================================
+      
+      clip f5513wm TMP8085540996 TMP2703067996 line 0.0000000000001
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2703067996 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2703067996 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8085540996 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8085540996:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP8085540996
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP6524646107 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP6524646107 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2703067996 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2703067996:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP2703067996
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP2703067996 TMP8085540996 TMP6524646107 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6524646107 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6524646107 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6524646107 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6524646107:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP6524646107
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP8275436307 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP8275436307 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP6524646107 TMP8275436307 line 
+      res inside = 100
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8275436307 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8275436307 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has a required item
+      /*
+      &if not [iteminfo TMP8275436307 -line inside -exists] &then
+         &do
+         &ty
+         &ty 
+         &ty ITEM ERROR 
+         &ty Item inside does not exist for TMP8275436307 lines 
+         &ty 
+         &return &error 
+         &end
+      /*============================================================
+      
+      /*
+      /* Drop item
+      /*
+      dropitem TMP8275436307.aat TMP8275436307.aat inside
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP6129861896 -polygon] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP6129861896:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POLYGON
+         &ty Existing features: 
+         directory featureclass TMP6129861896
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2741429507 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2741429507 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP8275436307 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP8275436307:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP8275436307
+         &return &error 
+         &end
+      /*===========================================================
+      
+      identity TMP8275436307 TMP6129861896 TMP2741429507 line 0.00000000001 
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2741429507 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2741429507 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP2741429507 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP2741429507:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP2741429507
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP0888966707 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP0888966707 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP2741429507 TMP0888966707 line 
+      res inside =  1
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP0888966707 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP0888966707 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists TMP0888966707 -line] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in TMP0888966707:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: LINE
+         &ty Existing features: 
+         directory featureclass TMP0888966707
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that an output cover does not already exist 
+      /*
+      &if [exists TMP2998281907 -cover] &then
+          &do
+          &ty
+          &ty
+          &ty COVERAGE ERROR:
+          &ty Coverage name TMP2998281907 already exists. Cannot create cover.
+          directory cover
+          &return &error
+
+          &end
+      /*============================================================
+      
+      reselect TMP0888966707 TMP2998281907 line 
+      res length  > 250
+      ~
+      n
+      n
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2998281907 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2998281907 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6129861896 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6129861896 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6129861896 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8085540996 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8085540996 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP8085540996 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2703067996 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2703067996 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP2703067996 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP6524646107 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP6524646107 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP6524646107 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP8275436307 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP8275436307 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP8275436307 all
+      
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists TMP2741429507 -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover TMP2741429507 does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      kill TMP2741429507 all
+      
+   &severity &error &routine bailout
+
+   &call main
+
+   &return
+   
+   /*==========================================================
+   &routine main
+
+   
+      /*
+      /* Check if a requested cover exists
+      /*
+      &if not [exists e5108am -cover] &then
+         &do
+         &ty
+         &ty
+         &ty COVERAGE ERROR:
+         &ty Cover e5108am does not exist
+         directory cover 
+         &return &error
+         &end
+      /*=============================================================
+      
+      &s var2707414920558083801 area perimeter e5108am# e5108am-id feat_code name facility q_info ufi symbol feat_wid orientation old_ufi
+      
+      /*
+      /* Check that the cover has the required topology
+      /*
+      &if not [exists e5108am -point] &then
+         &do
+         &ty 
+         &ty 
+         &ty FEATURE ERROR in e5108am:  
+         &ty Cover does not have the required feature
+         &ty Requested feature: POINT
+         &ty Existing features: 
+         directory featureclass e5108am
+         &return &error 
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that the cover does not have unneeded topology
+      /*
+      &if [exists e5108am -arc] &then
+         &do
+         &ty
+         &ty
+         &ty FEATURE ERROR 
+         &ty Cover e5108am has ARC topology 
+         &ty Legal features: point
+         &return &error
+         &end
+      /*===========================================================
+      
+      /*
+      /* Checks that a the cover does not contain unwanted
+      /* feature classes
+      /*
+      &describe e5108am
+      &if %dsc$arcs% > 0 &then
+         &do
+         &ty
+         &ty
+         &ty FEATURE ERROR 
+         &ty Cover e5108am has arc features
+         &ty Legal features point
+         &end
+      /*===========================================================
+      
+      /*
+      /* Check that the cover does not have unneeded topology
+      /*
+      &if [exists e5108am -polygon] &then
+         &do
+         &ty
+         &ty
+         &ty FEATURE ERROR 
+         &ty Cover e5108am has POLYGON topology 
+         &ty Legal features: point
+         &return &error
+         &end
+      /*===========================================================
+      
+      /*
+      /* Checks that a the cover does not contain unwanted
+      /* feature classes
+      /*
+      &describe e5108am
+      &if %dsc$qtopology% &then
+         &do
+         &ty
+         &ty
+         &ty FEATURE ERROR 
+         &ty Cover e5108am has polygon features
+         &ty Legal features point
+         &end
+      /*===========================================================
+      
+      &s var8020135920558083801 [listitem e5108am -point]
+      
+   /*
+   /* This code was generated by function isequal in file AML.pyc
+   /*
+   &s file AML.pyc
+   &s function isequal
+
+   
+   &severity &error &routine bailout
+   /*
+   /* Test lists have identical elements
+   /*
+   &s list1 [listitem e5108am -point]
+   &s list2 area perimeter e5108am# e5108am-id feat_code name facility q_info ufi symbol feat_wid orientation old_ufi
+   &s var8402445920558083801 .FALSE.
+   &if [token %list1% -count] = [token %list2% -count] &then
+      &do
+      &do i = 1 &to [token %list1% -count]
+         &s item1 [upcase [quote[extract %i% %list1%]]]
+         &s item2 [upcase [quote[extract %i% %list2%]]]
+         &ty [value item1] [value item2]
+         &s var8402445920558083801 [calc %item1% = %item2%]
+         &end
+      &end
+   
+         /*
+         /* Check for unwanted items
+         /*
+         &s bool [value var8402445920558083801]
+         &if [calc %bool% = .FALSE.] &then
+            &do
+            &ty
+            &ty COVERAGE ERROR
+            &ty Cover e5108am has extra items
+            &ty Legal items:
+            &ty %var8020135920558083801%
+            &ty Current items:
+            &ty %var2707414920558083801%
+            &end
+         /* ==============================================================
+         
+   &return
+   /* ==============================================================
+
+   &routine bailout
+     &severity &error &ignore
+     
+     &if [calc [upcase [quote %:program%]] = 'TABLES'] &then quit
+     &if [calc [upcase [quote %:program%]] = 'ARCPLOT'] &then quit
+     &if [calc [upcase [quote %:program%]] = 'ARCEDIT'] &then quit
+     &if [calc [upcase [quote %:program%]] = 'GENERATE'] &then
+        &do
+        ~
+        quit
+        &end
+     &ty An Error has occurred with the code
+     &ty generated by %file% in function %function% 
+     &ty [date -cal] [date -AMPM]
+     &return &error
+   
